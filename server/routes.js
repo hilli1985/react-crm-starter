@@ -1,66 +1,50 @@
 
 const express = require('express');
 const router = express.Router();
-
-// destruct
 let {Client} = require('../models/clientModel');
 
-const wrap = require("../middleware/wrap");
-
-router.get('/insertClients',(req,res,err)=>{
-  if (err){
-    console.log(err);
-  }
+//save each client to the DB
+router.get('/insertClients',(req,res)=>{
   let data = require('../src/data.json');
-  //res.send(data);
   data.map ((client)=>{
-    //save it to the DB
     let clientItem = new Client (client)
     clientItem.save((err,data)=>{
       if (err) {
         console.log(err);
+        res.send("Error: Cannot add client to DB")
       }
       console.log(clientItem);
-      //console.log("client:"+data);
     });
   });
   res.send('add all clients');
-}
-
-) 
+}) 
 
 // return all the clients
-router.get('/clients', (req, res,err) =>{
-  if (err) {
-    console.log(err);
-  }
+router.get('/clients', ( req, res ) =>{
   Client.find().exec((err, clients)=>{
     if (err){
-      console.log('err to return clients: '+err);
+      console.log('Error: Cannot return clients: '+err);
+      res.send('Error: Cannot return clients');
     }
     res.send(clients);
   });  
 }); 
 
-
 // return specific client 
-router.get('/client/:clientID', (req, res,err) =>{
+router.get('/client/:clientID', ( req, res ) =>{
   let {clientID} = req.params;
-  let dummydata = '5bb5c72a071693f8a75e4e73';
   Client.find({"_id":clientID}).exec((err, client) => {
     if (err) {
       console.log(err);
+      res.send('Error: Cannot find client #'+clientID)
     }
     res.send(client);
   });
 }); 
 
 //add new client
-router.post('/client',(req,res,err) =>{
+router.post('/client', (req, res ) =>{
   let client = req.body;
-  if(err) {
-    console.log(err);
-  };
   let newClient = new Client({
     name: client.name,
     email: client.email,
@@ -73,36 +57,53 @@ router.post('/client',(req,res,err) =>{
   newClient.save((err,data)=>{
     if (err) {
       console.log(err);
+      res.send('Error: Cannot add client')
     }
     res.json(data);
   }); 
 });
 
-//update
-// router.put('/client/:clientID', wrap(async (req, res) =>{
-//   let {clientID} = req.params;
-//   Client.findByIdAndUpdate(clientID)
-//   .then((data)=>{
-//     console.log("client updated");
-//     res.send(data);
-//   })
-//   .catch((err)=>{
-//     console.log(err);
-//   })
-// }));
-
-
-// // delete post
-// router.delete('/client/:clientID', wrap(async (req, res) =>{
-//   let {clientID} = req.params;
-//   Client.findByIdAndRemove(clientID)
-//   .then((data)=>{
-//     console.log("client deleted");
-//     res.send(data);
-//   })
-//   .catch((err)=>{
-//     //console.log(err);
-//   })
-// }));
-
-module.exports = router;
+//update client
+router.put('/client/:clientID', (req, res ) => {
+  Client.findByIdAndUpdate(req.params.clientID, 
+    {$set: 
+      {
+        name: req.body.name,
+        country: req.body.country,
+        owner:req.body.owner,
+        emailType:req.body.emailType,
+        sold:req.body.sold
+      }
+    },
+    {new: true}, // get the updated
+    //callback
+    (err,client) => {
+      if (err) {
+        console.log(err);
+        res.send('Error: Cannot update client #'+req.params.clientID);
+      }
+      res.send(client)
+    })
+  })
+  
+  // // delete post
+  router.delete('/client/:clientID', (req, res) =>{
+    Client.findByIdAndRemove(req.params.clientID,
+      (err,client) => {
+        if (err) {
+          console.log(err);
+          res.send('Error: Cannot update client #'+req.params.clientID);
+        }
+        res.send(client)
+      })
+      //callback instead of then and catch
+      // .then((data)=>{
+      //   console.log("client deleted");
+      //   res.send(data);
+      // })
+      // .catch((err)=>{
+      //   //console.log(err);
+      // })
+    });
+    
+    module.exports = router;

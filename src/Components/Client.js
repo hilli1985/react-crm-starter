@@ -24,8 +24,12 @@ class Client extends Component {
         let id = clientDetails._id;
         let name = clientDetails.name.split(" ")[0];
         let surname = clientDetails.name.split(" ")[1];
+        if (clientDetails.name.split(" ").length>2){
+            surname = `${clientDetails.name.split(" ")[1]} ${clientDetails.name.split(" ")[2]}`;
+        }
         let country = clientDetails.country;
         let firstContact = clientDetails.firstContact.split("T")[0];
+        firstContact = `${firstContact.split('-')[2]}-${firstContact.split('-')[1]}-${firstContact.split('-')[0]} `;
         let emailType = clientDetails.emailType;
         let sold = (clientDetails.sold ? 'V': '-');
         let owner = clientDetails.owner;

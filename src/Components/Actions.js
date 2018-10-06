@@ -5,15 +5,18 @@ import AddClient from './AddClient';
 class Actions extends Component {
     
     addNewClient = (data)=>{
-        console.log(data);
+        let firstContact = new Date().toISOString();
+        //manipulate the data before sending to server
         let client = {
             name: data.firstName+' '+data.surName,
-            email:"",
-            firstContact:"2018-11-26T22:00:00.000Z",
+            email:data.email,
+            firstContact:firstContact,
             emailType:"",
             sold:false,
-            owner:data.owner}
-            // // pass data to server
+            owner:data.owner,
+            country:data.country}
+            // pass data to server
+            console.log(client);
             this.props.addNewClient(client)
         }
         
