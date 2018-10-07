@@ -42,7 +42,7 @@ h1 {
   color:#2ecc71, #3498db, #e74c3c, #f1c40f */
 }
 
-li a:hover {
+li a:active {
   background-color: #F7CE3E;
   color:#0a1612;
 }
