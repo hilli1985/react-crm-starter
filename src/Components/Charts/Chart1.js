@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {BarChart, Bar, XAxis, YAxis, Cell, CartesianGrid, Tooltip, Legend} from 'recharts';
 
-
 class Chart1 extends Component {
     render() {
         let topEmployees = this.props.topEmployees;
