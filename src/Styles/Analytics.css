@@ -23,14 +23,14 @@
 
 .badge-text{
     height: 20px;
-    width: 250px;
+    width: 270px;
     opacity: 1;
     color:#0a1612;
     border-radius: 5px;
     position : absolute;
     font-family:Verdana,sans-serif;
     text-align: left;
-    padding:0.2em 0.2em 0.2em 7.8em ;
+    padding:0.2em 0.2em 0.2em 10.8em ;
     margin: 1em 0 0 6.5em;
     font-size: 12px;
     z-index: 1;
@@ -47,9 +47,25 @@
     font-family:Verdana,sans-serif;
     text-align: left;
     font-size: 35px;
-    padding: 0.2em 0.4em 0.2em 4.9em ;
+    padding: 0.2em 0.4em 0.2em 5.9em ;
     margin: -2.75em 0em 0em 0em ;
     
+}
+
+.chart-headline{
+    height: 20px;
+    width: 350px;
+    opacity: 1;
+    color:#0a1612;
+    border-radius: 5px;
+    position : absolute;
+    font-family:Verdana,sans-serif;
+    text-align: left;
+    padding:0.2em 0.2em 0.2em 7.8em ;
+    margin: -1em 0 0 -7em;
+    font-size: 15px;
+    z-index: 1;
+    font-weight: bold;
 }
 
 
@@ -97,10 +113,20 @@
 }
 .parent-grid-2  {
     display: grid;
-    grid-template-columns: 50%  ;
+    grid-template-columns: 40% 60%  ;
     grid-gap: 0px;
     color: #444;
-    margin:10px 80px 0px 0px;
+    margin:70px 80px 0px 15px;
+    background-color: #ecf0f1 ;
+    
+}
+
+.parent-grid-3  {
+    display: grid;
+    grid-template-columns: 65% 20%  ;
+    grid-gap: 0px;
+    color: #444;
+    margin:40px 80px 0px 15px;
     background-color: #ecf0f1 ;
     
 }

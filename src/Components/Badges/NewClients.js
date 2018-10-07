@@ -11,7 +11,7 @@ class NewClients extends Component {
             <div className="">
             <div id="icon-1" className="outer-circle"><FontAwesomeIcon className='icon' icon="chart-line" /></div>
             <div  className="badge-headline">{this.props.newClientsNum}</div>
-            <div  className="badge-text">New September Clients</div>
+            <div  className="badge-text">New {this.props.monthStr} Clients</div>
         </div>)
         }
     }

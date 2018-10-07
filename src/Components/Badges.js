@@ -6,12 +6,26 @@ import OutstandingClients from './Badges/OutstandingClients'
 import HottestCountry from './Badges/HottestCountry'
 
 class Badges extends Component {
+    constructor() {
+        super()
+        this.state = { 
+            months : ["dummy","January","February","March",
+                    "April","May","June",
+                    "July","August","September",
+                    "October","November","December"]
+        }
+      }
     
 getNewClients (){
-    let newClientsNum = this.props.clients.filter((client) => ((client.firstContact.split('T')[0].split('-')[1]==='09')
-    &&(client.firstContact.split('T')[0].split('-')[0]==='2018'))
+    let date = new Date().toISOString();
+    let year = date.split("T")[0].split("-")[0];
+    let month = date.split("T")[0].split("-")[1];
+    let newClientsNum = this.props.clients.filter((client) => ((client.firstContact.split('T')[0].split('-')[1]===month)
+    &&(client.firstContact.split('T')[0].split('-')[0]===year))
     );
-    return (newClientsNum.length);
+    let monthStr = (this.state.months[parseInt(month)]);
+    //console.log(newClientsNum);
+    return ({newClientsNum: newClientsNum.length,monthStr: monthStr});
 }
 
 getEmailSent() {
@@ -35,16 +49,15 @@ getHottestCountry() {
         console.log(hottest[0][0].country);
         return(hottest[0][0].country);
     }
-
 }
 render() {
-    let newClientsNum = this.getNewClients();
+    let {newClientsNum,monthStr} = this.getNewClients();
     let emailSentNum = this.getEmailSent();
     let outstandingClientsNum = this.getOutstandingClients();
     let hottestCountry = this.getHottestCountry();
     return (
         <div class="parent-grid">
-        <div class="box"><NewClients newClientsNum={newClientsNum}/></div>
+        <div class="box"><NewClients newClientsNum={newClientsNum} monthStr={monthStr}/></div>
         <div class="box"><EmailsSent emailSentNum={emailSentNum}/></div>
         <div class="box"> <OutstandingClients outstandingClientsNum={outstandingClientsNum}/></div>
         <div class="box"><HottestCountry hottestCountry={hottestCountry}/></div>
