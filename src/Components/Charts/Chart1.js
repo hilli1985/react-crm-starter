@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {BarChart, Bar, XAxis, YAxis, Cell, CartesianGrid, Tooltip, Legend} from 'recharts';
+import {BarChart, Bar, XAxis, YAxis, Cell, CartesianGrid, Tooltip, ResponsiveContainer, Legend} from 'recharts';
 
 class Chart1 extends Component {
     render() {
@@ -15,6 +15,7 @@ class Chart1 extends Component {
             Rank:index+1})
         );
                 return (<div><div className="chart-headline">Top Employees</div>
+                    <ResponsiveContainer width='100%' height={250}>
                     <BarChart width={400} height={250} data={data}
                     margin={{top: 20, right: 0, left: 0, bottom: 25}} layout="vertical">
                     <CartesianGrid strokeDasharray="3 3" />
@@ -31,7 +32,7 @@ class Chart1 extends Component {
                         ))
                     }
                     </Bar>
-                    </BarChart></div>)
+                    </BarChart></ResponsiveContainer></div>)
                 }
             }
             export default Chart1

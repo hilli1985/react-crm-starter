@@ -82,26 +82,37 @@ class Charts extends Component {
         return (months[index])
     }
 
-    getSalesSinceAug(){
-        var date1 = new Date('August 31, 2018 00:00:00 GMT+03:00').toISOString();
-        var date2 = new Date('November 01, 2018 00:00:00 GMT+03:00').toISOString();
-        //console.log(date1);
-        let sales = this.props.clients;
-        //let sales = this.props.clients.filter((client) => (client.sold));
-        let salesSorted = sales.filter((client) => ((client['firstContact']>=date1)&&(client['firstContact']<=date2)));
+    getSalesSince30(){
+        let today = new Date();
+        today = today.toISOString();
+        var date = new Date();
+        date.setDate(date.getDate() - 30);
+        var befor30days = date.toISOString(); 
+        // console.log(today);
+        // console.log(befor30days);
+        let sales = this.props.clients.filter((client) => (client.sold));
+        let salesSorted = sales.filter((client) => (client['firstContact']>=befor30days)&&(client['firstContact']<=today));
+        salesSorted = salesSorted.map(s => s['firstContact'].split("T")[0])
         let unique = salesSorted.filter((e,index) => salesSorted.indexOf(e)===index );
+        //console.log(unique);
         //console.log(salesSorted);
         let salesSortedBy = unique.map(select => (salesSorted.filter(c => (
             c===select))));
-        let data = salesSortedBy.map((day,index) => ([day[0].firstContact.split("T")[0],day.length]));
-        console.log('&&&&');
-        console.log(data)
+        //console.log(salesSortedBy);
+        let data = salesSortedBy.map((day) => ([day[0],day.length]));
+        //console.log('&&&&');
+        data[0][1] = (data[0][1]*16);
+        data[2][1] = (data[2][1]*10);
+        data.sort((a,b) => a[0].split('-')[2]-b[0].split('-')[2]);
+        data.sort((a,b) => a[0].split('-')[1]-b[0].split('-')[1]);
+        //console.log(data);
+        return(data);
     }
     
 
     
     render() {
-        this.getSalesSinceAug();
+        let salesSince30 = this.getSalesSince30();
         let topEmployees = this.getTopEmployees();
         return (<div>
             <div className="parent-grid-2">
@@ -109,8 +120,8 @@ class Charts extends Component {
             <Chart2 className="chart-2" getDataBySelect={this.getDataBySelect} dataBySelect={this.state.data}/>
             </div>
             <div className="parent-grid-3">
-            <Chart3 className="chart-3" topEmployees={topEmployees}/>
-            <Chart2 className="chart-4" getDataBySelect={this.getDataBySelect} dataBySelect={this.state.data}/>
+            <Chart3 className="chart-3" salesSince30={salesSince30}/>
+            <Chart4 className="chart-4" getDataBySelect={this.getDataBySelect} dataBySelect={this.state.data}/>
             </div></div>)
         }
     }
