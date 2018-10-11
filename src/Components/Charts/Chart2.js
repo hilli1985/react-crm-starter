@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {BarChart, Bar, XAxis, YAxis, Cell, CartesianGrid, Tooltip, Legend} from 'recharts';
+import {BarChart, Bar, XAxis, YAxis, Cell, CartesianGrid, Tooltip, ResponsiveContainer, Legend} from 'recharts';
 
 class Chart2 extends Component {
     constructor() {
@@ -46,11 +46,14 @@ class Chart2 extends Component {
             RespondentPercentage:e[1],
             Rank:index+1})
         );
-        //console.log(data);
+        const barSizeBySelect = {firstContact:20,country:30,emailType:40,owner:40}
+        const barSize = barSizeBySelect[this.state.select];
+        console.log(dataBySelect);
+        console.log(barSize);
         
         return (<div>
-            <div className="chart-headline">Sales by <span>{this.getfilterByList()}</span>
-            </div>
+            <div className="chart-headline">Sales by <span>{this.getfilterByList()}</span></div>
+            <ResponsiveContainer width="100%" height={250}>
             <BarChart width={800} height={250} data={data}
             margin={{top: 20, right: 0, left: 50, bottom: 25}} layout="horizontal">
             <CartesianGrid strokeDasharray="3 3" />
@@ -59,7 +62,7 @@ class Chart2 extends Component {
             <Tooltip />
             <Bar 
             dataKey="Sales" 
-            barSize ={20}
+            barSize ={barSize}
             fontFamily="sans-serif">
             {
                 data.map((entry, index) => (
@@ -69,7 +72,10 @@ class Chart2 extends Component {
                 ))
             }
             </Bar>
-            </BarChart></div>)
+            </BarChart>
+            </ResponsiveContainer>
+            {/* </ResponsiveContainer> */}
+            </div>)
         }
     }
     export default Chart2
