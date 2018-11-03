@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import '../Styles/Client.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faCheck} from '@fortawesome/free-solid-svg-icons'
+import { library} from '@fortawesome/fontawesome-svg-core'
+library.add(faCheck)
 
 class Client extends Component {
     constructor() {
@@ -31,7 +35,7 @@ class Client extends Component {
         let firstContact = clientDetails.firstContact.split("T")[0];
         firstContact = `${firstContact.split('-')[2]}-${firstContact.split('-')[1]}-${firstContact.split('-')[0]} `;
         let emailType = clientDetails.emailType;
-        let sold = (clientDetails.sold ? 'V': '-');
+        let sold = (clientDetails.sold ? <span><FontAwesomeIcon icon="check" /></span> : '-');
         let owner = clientDetails.owner;
         return (
         <div onClick={this.handleClick}>

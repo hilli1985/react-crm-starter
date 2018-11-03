@@ -121,7 +121,7 @@ class Charts extends Component {
             </div>
             <div className="parent-grid-3">
             <Chart3 className="chart-3" salesSince30={salesSince30}/>
-            <Chart4 className="chart-4" getDataBySelect={this.getDataBySelect} dataBySelect={this.state.data}/>
+            <Chart4 className="chart-4"/>
             </div></div>)
         }
     }

@@ -4,7 +4,7 @@
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+  height: 50vmin;
 }
 
 .App-header {
@@ -22,14 +22,14 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
+/* @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
-}
+} */
 
 h1 {
   display: inline;
@@ -50,5 +50,82 @@ li a:active {
 li a {
   margin:5px;
 }
+
+
+.action-form {
+  color: #343a40;
+  text-align: left;
+  margin-left:20px;
+}
+
+.action-headline {
+  color: #343a40;
+  font-weight: bold;
+  font-size:20px;
+
+}
+
+.btn-yellow {
+  color:#f1c40f;
+  margin-left: 5px;
+  font-weight: bold;
+  border: 1px solid #ecf0f1;
+  border-bottom: 1px solid #f8f9fa;
+  background-color: #f8f9fa;
+  text-align: center;
+  white-space: nowrap;
+  border-radius: 5px;
+
+}
+.btn-yellow:hover {
+  background-color: #e2e9eb;
+}
+
+.add-btn-submit {
+  background-color:#f1c40f;
+  margin-top:10px;
+  padding: 5px;
+  padding-left:30px;
+  padding-right:30px;
+  font-weight: bold;
+  border: 1px solid #f8f9fa ;
+  border-radius: 5px;
+
+}
+
+.navigator {
+  background-color:#343a40;
+  color:#fff;
+}
+
+.nav-item {
+  margin-left: 10px;
+
+
+}
+.nav-item:hover {
+  background-color: #c4c0b4;
+  border-radius: 2px;
+
+}
+
+.nav-item:focus {
+  background-color: #c4c0b4;
+  border-radius: 2px;
+  width:auto;
+  margin-left: 10px; 
+}
+
+.credit {
+  font-size: 60%;
+}
+
+.navbar-sm {
+  font-size: 10px;
+  height: 50px;  
+}
+
+
+
 
 
