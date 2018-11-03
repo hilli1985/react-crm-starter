@@ -40,9 +40,20 @@ body {
     margin:0px 10px 0px 10px;
 }
 
-.search-bar {
+.search-bar-md {
     background-color: #ecf0f1 ;
-    margin:5px 2px 5px 2px;
+    margin:7px 5px 7px 5px;
+    border-radius: 10px;
+    box-shadow: 2px 2px grey;
+    color: #0a1612;
+    padding: 0px 2px 0px 2px;
+    width:160px;
+    height:35px;
+}
+
+.search-bar-sm {
+    background-color: #ecf0f1 ;
+    margin:5px 5px 5px 5px;
     border-radius: 10px;
     box-shadow: 2px 2px grey;
     color: #0a1612;

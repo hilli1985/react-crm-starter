@@ -12,11 +12,10 @@ class Clients extends Component {
             hideModal : true,
             clientModal : {},
             query:'',
-            category:'name',
+            category:'select',
             clients:[],
             position : 0, 
             jump : 20,
-            //fields : ['Name', 'Surname', 'Country', 'First Contact', 'Email', 'Sold', 'Owner']
             fields : {
                 'Name' : 'name', 
                 'Surname' : 'surname',
@@ -35,16 +34,13 @@ class Clients extends Component {
         }
         
         getClients = () => {
-            let clients = this.props.clients;
-            let filteredClient = this.filterBy(clients);
-            let position = this.state.position;
-            let jump = this.state.jump;
-            if(!filteredClient){
+            if(!this.props.clients){
                 return;
-            }
+            } 
+            let filteredClient = this.filterBy(); //filter the sliced  
             return (
                 <div>
-                {filteredClient.slice(position,position+jump).map(c => {
+                {filteredClient.map(c => {
                     return (
                         <Client key={c._id} data={c} handleClick={this.clientClicked}/>          
                     )
@@ -58,13 +54,12 @@ class Clients extends Component {
         }
 
         getHeadLine = () => {
-            let fields = this.state.fields;
-            if (!fields){
+            if (!this.state.fields){
                 return;
             }
             return (
                 <div className="wrapper">
-                {Object.entries(fields).map(f => {
+                {Object.entries(this.state.fields).map(f => {
                     return (
                         <div key={f[0]} className="box headline-box">{f[0]}</div>      
                     )
@@ -98,20 +93,25 @@ class Clients extends Component {
             this.setState({query:query,category:category});
         }
         
-        filterBy = (clients)=>{
+        filterBy = ()=>{
+            let clients = this.props.clients.slice(this.state.position,this.state.position + this.state.jump);
             let query = this.state.query;
             let category = this.state.category;
             return clients.filter(
                 (client) => 
                 {
-                    if (category === 'emailType') {
+                    if ((category === 'select')||(category === 'Select')) {
+                        return client['name'].toLowerCase().includes('');
+                    }
+                    else if (category === 'emailType') {
                         let char = ((!client[category]) ? '' : client[category].toLowerCase()); 
                         return char===query.toLowerCase();
                     }
                     else if ((category === 'sold')){
-                        let sign = (((query==='v')||(query==='V')) ? true : false); 
+                        let sign = ((query==='v')||(query==='V')||(query==='yes')); //v or V is true 
                         return client[category]===sign;
                     }
+                    query = this.state.query ? this.state.query.toLowerCase() : this.state.query; 
                     return client[category].toLowerCase().includes(query)
                 });
             }

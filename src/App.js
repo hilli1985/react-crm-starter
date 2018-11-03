@@ -6,8 +6,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import './App.css';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
-import '../node_modules/bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Clients from './Components/Clients';
 import Actions from './Components/Actions';
@@ -101,14 +101,16 @@ class App extends Component {
     return (
       <Router>
       <div className="App">   
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">>
-      <ul className="navbar-header nav navbar-nav">
-      <li><Link className="navbar-brand" to="/">Home</Link></li>
-      <li><Link className="navbar-brand" to="/Clients">Clients</Link></li>
-      <li><Link className="navbar-brand" to="/Actions">Actions</Link></li>
-      <li><Link className="navbar-brand" to="/Analytics">Analytics</Link></li>
+      
+      <nav className="navbar-sm navbar navbar-expand-lg navbar-dark bg-dark">
+      <ul className="navbar-header nav navbar-nav navbar-left">
+      <li><Link className="nav-item navbar-brand" to="/">Home</Link></li>
+      <li><Link className="nav-item navbar-brand" to="/Clients">Clients</Link></li>
+      <li><Link className="nav-item navbar-brand" to="/Actions">Actions</Link></li>
+      <li><Link className="nav-item navbar-brand" to="/Analytics">Analytics</Link></li>
       </ul>
       </nav>
+
       <Route path="/" exact render={() => <Home />} />
       <Route path="/Clients" exact render={() => <Clients clients={this.state.clients} updateClientDetails={this.updateClientDetails}/>} />
       <Route path="/Actions" exact render={() => <Actions clients={this.state.clients} updateAction={this.updateClientAction} addNewClient={this.addNewClient} />} />

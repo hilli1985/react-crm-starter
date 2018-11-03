@@ -117,37 +117,46 @@ class UpdateClient extends Component {
         let unique = owner.filter((c,index) => owner.indexOf(c)===index );
         unique.unshift("Owner");
         return (
-            <select value={this.state.owner} prop="owner" onChange={this.handleChange}>
+            <select className="form-control-sm col-sm-1 form-control" value={this.state.owner} prop="owner" onChange={this.handleChange}>
             {unique.map ((o) => <option>{o}</option>)}
             </select>)
         }
         getEmailTypeList = () => {
             let emailTypes = ['Email Type','A','B','C','D'];
             return (
-                <select value={this.state.emailType} prop="emailType" onChange={this.handleChange}>
+                <select className="form-control-sm col-sm-1 form-control" value={this.state.emailType} prop="emailType" onChange={this.handleChange}>
                 {emailTypes.map ((o) => <option>{o}</option>)}
                 </select>
             )
         }
         render(){
             return (
-                <div>
-                <div>UPDATE
+                <div className="action-form">
+                <div className="action-headline">UPDATE</div>
                 <form>  
-                Client: <input type="text" prop="client" value={this.state.client} onChange={this.getClient} 
-                placeholder="Client Name" list="clients"/>
-                {this.state.clientsList}
-                <br/>Transfer ownership to
+                <div class="form-row">
+                    <label class="col-sm-0 col-form-label">Client:</label>
+                    <input className="form-control-sm col-sm-2 form-control" type="text" prop="client" value={this.state.client} onChange={this.getClient} 
+                    placeholder="Client Name" list="clients"/>{this.state.clientsList}
+                </div>
+                <div class="form-row">
+                <label class="col-sm-0 col-form-label">Transfer ownership to</label>
                 {this.getOwnersList()}
-                <input className="" type="submit"  onClick={this.transferClicked}  value="TRANSFER"/>
-                <br/>
-                {this.getEmailTypeList()}
-                <input className="" type="submit" onClick={this.sendClicked}  value="SEND"/>
-                <br/>DECLER Sale! <input className="" type="submit"  onClick={this.declareClicked}  value="DECLER"/>
+                <input className="form-control-sm btn-yellow" type="submit"  onClick={this.transferClicked}  value="TRANSFER"/>
+                </div>
+                <div class="form-row">
+                    <label class="col-sm-0 col-form-label">Send Email:</label>
+                    {this.getEmailTypeList()}
+                    <input className="form-control-sm btn-yellow" type="submit" onClick={this.sendClicked}  value="SEND"/>
+                </div>
+                <div class="form-row">
+                <label class="col-sm-0 col-form-label"> DECLER Sale!</label>
+                <input className="form-control-sm btn-yellow" type="submit"  onClick={this.declareClicked}  value="DECLER"/>
+                </div>
                 </form>
                 <hr/>
                 </div>
-                </div>)
+                )
             }
         }
         

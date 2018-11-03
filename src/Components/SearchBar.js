@@ -7,8 +7,8 @@ class SearchBar extends Component {
         this.state = { 
             jump : 20,
             query: '',
-            category:'name',
-            options:{'name':'Name','sold':'Sold','emailType':'Email','owner':'Owner','country':'Country'},       
+            category:'Select',
+            options:{'select':'Select','name':'Name','sold':'Sold','emailType':'Email','owner':'Owner','country':'Country'},       
             jumps:[20,50,100,200,500]        
         }
     }
@@ -36,6 +36,7 @@ class SearchBar extends Component {
     }
     
     render (){
+
         const optionList = Object.entries(this.state.options).map(([key, value]) => (
             <option key={key} value={key}>{value}</option>
           ));
@@ -44,12 +45,12 @@ class SearchBar extends Component {
           ));
         return(
             <div className="wrapper-bar">
-            <input className="search-bar" type="text" name="name" onChange={this.handleChange}  value={this.state.value} placeholder="Search"/>
-            <select className="search-bar"  value={this.state.category} onChange={this.handleSelect} >
+            <input className="search-bar-md" type="text" name="name" onChange={this.handleChange}  value={this.state.value} placeholder="Search"/>
+            <select className="search-bar-md"  value={this.state.category} onChange={this.handleSelect} >
                 {optionList}
             </select>
             <div className="box">
-            <select className="search-bar" value={this.state.jump} onChange={this.changeJump}>
+            <select className="search-bar-sm" value={this.state.jump} onChange={this.changeJump}>
                 {jumpLevelList}
             </select>
             <span onClick={this.decreaseBoundery}> ❮ </span>
