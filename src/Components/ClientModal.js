@@ -40,7 +40,7 @@ class ClientModal extends Component {
             surname : this.state.surname,
             country : this.state.country
         }
-        this.props.changeClientProps(newClient);
+        this.props.updateClientDetails(newClient);
     }
 
 

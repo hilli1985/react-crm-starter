@@ -23,7 +23,6 @@ class SearchBar extends Component {
 
     increaseBoundery = () => {
         this.props.changeBoundary(1)
-
     }
 
     decreaseBoundery = () => {        
@@ -49,7 +48,7 @@ class SearchBar extends Component {
             <select className="search-bar-md"  value={this.state.category} onChange={this.handleSelect} >
                 {optionList}
             </select>
-            <div className="box">
+            <div className="pager">
             <select className="search-bar-sm" value={this.state.jump} onChange={this.changeJump}>
                 {jumpLevelList}
             </select>

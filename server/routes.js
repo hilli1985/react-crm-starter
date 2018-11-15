@@ -43,7 +43,7 @@ router.get('/client/:clientID', ( req, res ) =>{
 }); 
 
 //add new client
-router.post('/client', (req, res ) =>{
+router.post('/client', (req, res ) => {
   let client = req.body;
   let newClient = new Client({
     name: client.name,

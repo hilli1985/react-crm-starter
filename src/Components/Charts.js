@@ -88,24 +88,18 @@ class Charts extends Component {
         var date = new Date();
         date.setDate(date.getDate() - 30);
         var befor30days = date.toISOString(); 
-        // console.log(today);
-        // console.log(befor30days);
         let sales = this.props.clients.filter((client) => (client.sold));
         let salesSorted = sales.filter((client) => (client['firstContact']>=befor30days)&&(client['firstContact']<=today));
         salesSorted = salesSorted.map(s => s['firstContact'].split("T")[0])
         let unique = salesSorted.filter((e,index) => salesSorted.indexOf(e)===index );
-        //console.log(unique);
-        //console.log(salesSorted);
         let salesSortedBy = unique.map(select => (salesSorted.filter(c => (
             c===select))));
-        //console.log(salesSortedBy);
         let data = salesSortedBy.map((day) => ([day[0],day.length]));
-        //console.log('&&&&');
         data[0][1] = (data[0][1]*16);
         data[2][1] = (data[2][1]*10);
         data.sort((a,b) => a[0].split('-')[2]-b[0].split('-')[2]);
         data.sort((a,b) => a[0].split('-')[1]-b[0].split('-')[1]);
-        //console.log(data);
+    
         return(data);
     }
     

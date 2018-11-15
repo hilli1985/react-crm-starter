@@ -22,6 +22,16 @@ body {
     font-size: 100%;
 }
 
+.pager {
+    background-color: #ecf0f1 ;
+    color: #0a1612;
+    padding: 10px 5px 10px 5px;
+    font-size: 100%;
+    position: absolute;
+    right:0;
+    height:20px;
+}
+
 .headline-box {
     background-color: #f1c40f;
     color: #0a1612;
@@ -64,11 +74,13 @@ body {
 
 .wrapper-bar {
     display: grid;
-    grid-template-columns: 15%  15%  125%  ;
+    grid-template-columns: 18%  60%  20%  ;
     grid-gap: 0px;
     color: #444;
     margin:0px 10px 0px 10px;
     background-color: #ecf0f1 ;
+    min-width: 1024px;
+    /* max-width: 1024px; */
     
 }
 
@@ -79,3 +91,4 @@ body {
 .wrapper-bar span:hover{
     /* color: #f1c40f; */
 } 
+

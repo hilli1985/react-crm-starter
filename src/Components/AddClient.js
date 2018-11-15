@@ -1,4 +1,5 @@
-import React, { Component } from 'react'; 
+import React, { Component } from 'react';
+import util from '../axiosUtil';
 
 class AddClient extends Component { 
     constructor() {
@@ -21,13 +22,33 @@ class AddClient extends Component {
             alert ('Please eneter a legal email \n see example below');
             return;
         }
-        this.props.addNewClient(this.state);    
+        this.addNewClient(this.state);    
     }
     
     validateEmail = (email)=> {
         var re = /^(([^<>()\]\\.,;:\s@"]+(\.[^<>()\]\\.,;:\s@"]+)*)|(".+"))@(([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(String(email).toLowerCase());
     }
+
+    addNewClient = async (newClient) => {
+        let firstContact = new Date().toISOString();
+        //manipulate the data before sending to server
+        let client = {
+            name: newClient.firstName+' '+newClient.surName,
+            email:newClient.email,
+            firstContact:firstContact,
+            emailType:"",
+            sold:false,
+            owner:newClient.owner,
+            country:newClient.country}
+            // pass data to server
+            let clientFromDB = await util.addClientToDB(client);
+            alert('New client was added');
+            console.log(clientFromDB);
+        }
+
+    
+
     
     render(){
         return (
