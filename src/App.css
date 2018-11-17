@@ -135,7 +135,8 @@ nav-bar-fit {
     font-size: 10px;
     height: 50px;
     width: 100%;
-    margin-left:10px; 
+    margin-left:0px; 
+    /* margin-right:0px;  */
   }
 }
 
