@@ -12,10 +12,18 @@ body {
     color: #444;
     margin:0px 10px 0px 10px;
     background-color: #ecf0f1 ;
-    
 }
 
 .box {
+    background-color: #ecf0f1 ;
+    color: #0a1612;
+    padding: 10px 5px 10px 5px;
+    font-size: 100%;
+}
+
+.pager {
+    position: relative;
+    height:45px;
     background-color: #ecf0f1 ;
     color: #0a1612;
     padding: 10px 5px 10px 5px;
@@ -43,12 +51,14 @@ body {
 .search-bar-md {
     background-color: #ecf0f1 ;
     margin:7px 5px 7px 5px;
-    border-radius: 10px;
-    box-shadow: 2px 2px grey;
+    border-radius: 4px;
+    box-shadow: 1px 1px grey;
     color: #0a1612;
     padding: 0px 2px 0px 2px;
     width:160px;
     height:35px;
+    display: block;
+    font-size: 100%;
 }
 
 .search-bar-sm {
@@ -64,18 +74,23 @@ body {
 
 .wrapper-bar {
     display: grid;
-    grid-template-columns: 15%  15%  125%  ;
+    grid-template-columns: 20%  20%  20% 20% 20% ;
     grid-gap: 0px;
     color: #444;
     margin:0px 10px 0px 10px;
     background-color: #ecf0f1 ;
-    
+    min-width: 1024px;   
 }
 
 .wrapper-bar span{
     font-size: 20px;
 } 
 
-.wrapper-bar span:hover{
-    /* color: #f1c40f; */
-} 
+@media only screen and (max-width: 640px) {
+    .pager {
+        /* right:0; */
+    }  
+}
+
+
+
