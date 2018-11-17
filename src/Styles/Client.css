@@ -12,7 +12,6 @@ body {
     color: #444;
     margin:0px 10px 0px 10px;
     background-color: #ecf0f1 ;
-    
 }
 
 .box {
@@ -53,8 +52,8 @@ body {
 .search-bar-md {
     background-color: #ecf0f1 ;
     margin:7px 5px 7px 5px;
-    border-radius: 10px;
-    box-shadow: 2px 2px grey;
+    border-radius: 4px;
+    box-shadow: 1px 1px grey;
     color: #0a1612;
     padding: 0px 2px 0px 2px;
     width:160px;

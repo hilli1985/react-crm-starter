@@ -34,8 +34,8 @@
 h1 {
   display: inline;
   position: absolute;
-  top:80px;
-  color: #F7CE3E;
+  top: 80px;
+  color: #f7ce3e;
   /* color:#0a1612;
   color:#ecf0f1;
   color:#F7CE3E;
@@ -43,30 +43,28 @@ h1 {
 }
 
 li a:active {
-  background-color: #F7CE3E;
-  color:#0a1612;
+  background-color: #f7ce3e;
+  color: #0a1612;
 }
 
 li a {
-  margin:5px;
+  margin: 5px;
 }
-
 
 .action-form {
   color: #343a40;
   text-align: left;
-  margin-left:20px;
+  margin-left: 20px;
 }
 
 .action-headline {
   color: #343a40;
   font-weight: bold;
-  font-size:20px;
-
+  font-size: 20px;
 }
 
 .btn-yellow {
-  color:#f1c40f;
+  color: #343a40;
   margin-left: 5px;
   font-weight: bold;
   border: 1px solid #ecf0f1;
@@ -75,22 +73,22 @@ li a {
   text-align: center;
   white-space: nowrap;
   border-radius: 5px;
-
+  border: #343a40  solid 2px;
 }
+
 .btn-yellow:hover {
   background-color: #e2e9eb;
 }
 
 .add-btn-submit {
-  background-color:#f1c40f;
-  margin-top:10px;
+  background-color: #f1c40f;
+  margin-top: 10px;
   padding: 5px;
-  padding-left:30px;
-  padding-right:30px;
+  padding-left: 30px;
+  padding-right: 30px;
   font-weight: bold;
-  border: 1px solid #f8f9fa ;
+  border: 1px solid #f8f9fa;
   border-radius: 5px;
-
 }
 
 nav-bar-fit {
@@ -100,17 +98,17 @@ nav-bar-fit {
 
 .nav-item {
   border: 5px #343a40 solid;
-  padding:5px ;
+  padding: 5px;
 }
 .nav-item:hover {
   border: 5px #f1c40f solid;
-  padding:5px ;
-  background-color:#f1c40f;
+  padding: 5px;
+  background-color: #f1c40f;
 }
 
-.nav-item:focus {
+.nav-item-active {
   border: 5px #f1c40f solid;
-  padding:5px ;
+  padding: 5px;
   background-color: #f1c40f;
 }
 
@@ -120,7 +118,7 @@ nav-bar-fit {
 
 .navbar-sm {
   font-size: 10px;
-  height: 50px;  
+  height: 50px;
 }
 .burger-hide {
   opacity: 0;
@@ -129,19 +127,18 @@ nav-bar-fit {
   opacity: 1;
 }
 
-@media (max-width: 1024px) { 
+@media (max-width: 1024px) {
   .nav-hide {
     opacity: 0;
   }
   .burger-hide {
     opacity: 1;
     position: absolute;
-    left:0;
+    left: 0;
   }
-
 }
 
-@media (min-width: 1024px) { 
+@media (min-width: 1024px) {
   .nav-bar-side {
     opacity: 0;
   }
@@ -149,7 +146,7 @@ nav-bar-fit {
 
 .bar-item {
   border: 5px #343a40 solid;
-  padding:5px ;
+  padding: 5px;
 }
 .bar-item:focus {
   background-color: transparent;
@@ -162,10 +159,3 @@ nav-bar-fit {
   left: 0;
   z-index: 2;
 }
-
-
-
-
-
-
-
