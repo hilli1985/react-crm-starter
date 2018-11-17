@@ -156,7 +156,7 @@ class Clients extends Component {
     let boundary = this.state.position;
     let jump = this.state.jump;
     return (
-      <div>
+      <div className="reponsive">
         {!this.state.hideModal && (
           <ClientModal
             clientModal={this.state.clientModal}

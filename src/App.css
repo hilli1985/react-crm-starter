@@ -30,10 +30,10 @@ h1 {
   color: #f7ce3e;
 }
 
-li a:active {
+/* li a:active {
   background-color: #f7ce3e;
   color: #0a1612;
-}
+} */
 
 li a {
   margin: 5px;
@@ -42,7 +42,6 @@ li a {
 .action-form {
   color: #343a40;
   text-align: left;
-  /* margin-left: 20px; */
   margin: 10px;
   margin-left: 40px;
   margin-right: 40px;
@@ -132,6 +131,12 @@ nav-bar-fit {
     position: absolute;
     left: 0;
   }
+  .navbar-sm {
+    font-size: 10px;
+    height: 50px;
+    width: 100%;
+    margin-left:10px; 
+  }
 }
 
 @media (min-width: 1024px) {
@@ -182,11 +187,16 @@ nav-bar-fit {
   margin-top:5px !important; 
 }
 
-@media only screen and (max-width: 630px) {
+@media only screen and (max-width: 640px) {
   .btn-yellow {
     margin-left: 0;
     margin-right: 5px !important; 
     margin-top: 5px;
-    
   }
+  .action-form{
+    margin-right: 20px !important; 
+    margin-left: 20px !important; 
+    width: 800px;
+  }
+
 }

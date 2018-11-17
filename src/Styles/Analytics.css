@@ -140,8 +140,6 @@
     left:160px;
 }
 
-
-
 @media only screen and (max-width: 1024px) {
     .parent-grid-2 {
         display: grid;
@@ -158,7 +156,6 @@
         background-color: #ecf0f1 ; 
     }  
 }
-
 
 @media only screen and (max-width: 700px) {
     .parent-grid {

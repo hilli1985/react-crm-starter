@@ -55,7 +55,7 @@ class AddClient extends Component {
       <div className="action-headline">ADD CLIENT</div>
       <form>
       <div className="form-row">
-          <label className="col-sm-1 col-form-label">First name:</label>
+          <label className="col-sm-2 col-form-label">First name:</label>
           <input
             className="col-sm-2 form-control"
             type="text"
@@ -67,7 +67,7 @@ class AddClient extends Component {
           />
         </div>
         <div class="form-row">
-          <label class="col-sm-1 col-form-label">Surname:</label>
+          <label class="col-sm-2 col-form-label">Surname:</label>
           <input
             className="col-sm-2 form-control"
             type="text"
@@ -79,7 +79,7 @@ class AddClient extends Component {
           />
         </div>
         <div class="form-row">
-          <label class="col-sm-1 col-form-label">Country:</label>
+          <label class="col-sm-2 col-form-label">Country:</label>
           <input
             className="col-sm-2 form-control"
             type="text"
@@ -91,7 +91,7 @@ class AddClient extends Component {
           />
         </div>
         <div class="form-row">
-          <label class="col-sm-1 col-form-label">Owner:</label>
+          <label class="col-sm-2 col-form-label">Owner:</label>
           <input
             className="col-sm-2 form-control "
             type="text"
@@ -103,7 +103,7 @@ class AddClient extends Component {
           />
         </div>
         <div class="form-row">
-          <label for="staticEmail" class="col-sm-1 col-form-label">
+          <label for="staticEmail" class="col-sm-2 col-form-label">
             Email:
           </label>
           <input
