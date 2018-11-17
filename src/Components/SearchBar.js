@@ -59,7 +59,7 @@ class SearchBar extends Component {
     return (
       <div className="wrapper-bar">
         <input
-          className="search-bar-md"
+          className="search-bar-md box"
           type="text"
           name="name"
           onChange={this.handleChange}
@@ -67,13 +67,15 @@ class SearchBar extends Component {
           placeholder="Search"
         />
         <select
-          className="search-bar-md"
+          className="search-bar-md box"
           value={this.state.category}
           onChange={this.handleSelect}
         >
           {optionList}
         </select>
-        <div className="pager">
+        <div className="pager box"></div>
+        <div className="pager box"></div>
+        <div className="pager box">
           <select
             className="search-bar-sm"
             value={this.state.jump}

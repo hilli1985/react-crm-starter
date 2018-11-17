@@ -46,7 +46,7 @@ class Chart3 extends Component {
             width={730}
             height={250}
             data={dataEdit}
-            margin={{ top: 5, right: 20, left: 0, bottom: 5 }}
+            margin={{ top: 5, right: 30, left: 0, bottom: 5 }}
           >
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="time" />

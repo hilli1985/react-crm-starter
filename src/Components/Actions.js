@@ -7,6 +7,7 @@ class Actions extends Component {
     return (
       <div>
         <UpdateClient />
+        <hr />
         <AddClient />
       </div>
     );

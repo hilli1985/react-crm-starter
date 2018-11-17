@@ -22,13 +22,12 @@ body {
 }
 
 .pager {
+    position: relative;
+    height:45px;
     background-color: #ecf0f1 ;
     color: #0a1612;
     padding: 10px 5px 10px 5px;
     font-size: 100%;
-    position: absolute;
-    right:0;
-    height:20px;
 }
 
 .headline-box {
@@ -58,6 +57,8 @@ body {
     padding: 0px 2px 0px 2px;
     width:160px;
     height:35px;
+    display: block;
+    font-size: 100%;
 }
 
 .search-bar-sm {
@@ -73,21 +74,23 @@ body {
 
 .wrapper-bar {
     display: grid;
-    grid-template-columns: 18%  60%  20%  ;
+    grid-template-columns: 20%  20%  20% 20% 20% ;
     grid-gap: 0px;
     color: #444;
     margin:0px 10px 0px 10px;
     background-color: #ecf0f1 ;
-    min-width: 1024px;
-    /* max-width: 1024px; */
-    
+    min-width: 1024px;   
 }
 
 .wrapper-bar span{
     font-size: 20px;
 } 
 
-.wrapper-bar span:hover{
-    /* color: #f1c40f; */
-} 
+@media only screen and (max-width: 640px) {
+    .pager {
+        /* right:0; */
+    }  
+}
+
+
 

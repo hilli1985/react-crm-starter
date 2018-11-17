@@ -142,6 +142,49 @@
 
 
 
+@media only screen and (max-width: 1024px) {
+    .parent-grid-2 {
+        display: grid;
+        grid-template-columns: 100%  ;
+        grid-gap: 0px;
+        color: #444;
+        background-color: #ecf0f1 ; 
+    }  
+    .parent-grid-3 {
+        display: grid;
+        grid-template-columns: 100%  ;
+        grid-gap: 0px;
+        color: #444;
+        background-color: #ecf0f1 ; 
+    }  
+}
+
+
+@media only screen and (max-width: 700px) {
+    .parent-grid {
+        grid-template-columns: 50% 50%  ;
+        margin-left:150px; 
+    }
+    .parent-grid-2 {
+        display: grid;
+        grid-template-columns: 85%  ;
+        grid-gap: 0px;
+        color: #444;
+        background-color: #ecf0f1 ; 
+        margin-left:120px; 
+    }  
+    .parent-grid-3 {
+        display: grid;
+        grid-template-columns: 85%  ;
+        grid-gap: 0px;
+        color: #444;
+        background-color: #ecf0f1 ; 
+        margin-left:120px; 
+    }  
+}
+
+
+
 
 
 

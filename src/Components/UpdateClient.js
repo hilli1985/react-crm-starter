@@ -135,7 +135,7 @@ class UpdateClient extends Component {
     unique.unshift("Owner");
     return (
       <select
-        className="form-control-sm col-sm-1 form-control"
+        className="form-control col-sm-2 form-control"
         value={this.state.owner}
         prop="owner"
         onChange={this.handleChange}
@@ -151,7 +151,7 @@ class UpdateClient extends Component {
     let emailTypes = ["Email Type", "A", "B", "C", "D"];
     return (
       <select
-        className="form-control-sm col-sm-1 form-control"
+        className="form-control col-sm-2 form-control"
         value={this.state.emailType}
         prop="emailType"
         onChange={this.handleChange}
@@ -168,10 +168,10 @@ class UpdateClient extends Component {
       <div className="action-form">
         <div className="action-headline">UPDATE</div>
         <form>
-          <div class="form-row">
+          <div class="form-row override-form-row">
             <label class="col-sm-0 col-form-label">Client:</label>
             <input
-              className="form-control-sm col-sm-2 form-control"
+              className="col-sm-2 form-control"
               type="text"
               prop="client"
               value={this.state.client}
@@ -181,7 +181,7 @@ class UpdateClient extends Component {
             />
             {this.state.clientsList}
           </div>
-          <div class="form-row">
+          <div class="form-row override-form-row ">
             <label class="col-sm-0 col-form-label">Transfer ownership to</label>
             {this.getOwnersList()}
             <input
@@ -191,7 +191,7 @@ class UpdateClient extends Component {
               value="Transfer"
             />
           </div>
-          <div class="form-row">
+          <div class="form-row override-form-row ">
             <label class="col-sm-0 col-form-label">Send Email:</label>
             {this.getEmailTypeList()}
             <input
@@ -201,7 +201,7 @@ class UpdateClient extends Component {
               value="Send"
             />
           </div>
-          <div class="form-row">
+          <div class="form-row override-form-row ">
             {/* <label class="col-sm-0 col-form-label"> Declare Sale!</label> */}
             <input
               className="form-control-sm btn-yellow"
@@ -211,8 +211,7 @@ class UpdateClient extends Component {
             />
           </div>
         </form>
-        <hr />
-      </div>
+          </div>
     );
   }
 }

@@ -26,12 +26,12 @@ class Chart1 extends Component {
     return (
       <div className="chart">
         <div className="chart-headline">Top Employees</div>
-        <ResponsiveContainer width="90%" height={170}>
+        <ResponsiveContainer width="80%" height={170}>
           <BarChart
             width={400}
             height={250}
             data={data}
-            margin={{ top: 20, right: 0, left: 0, bottom: 25 }}
+            margin={{ top: 20, right: 20, left: 0, bottom: 25 }}
             layout="vertical"
           >
             <CartesianGrid strokeDasharray="3 3" />

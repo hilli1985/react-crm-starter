@@ -8,7 +8,8 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  /* background-color: #282c34; */
+  background-color: #ecf0f1;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,24 +23,11 @@
   color: #61dafb;
 }
 
-/* @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
-
 h1 {
   display: inline;
   position: absolute;
   top: 80px;
   color: #f7ce3e;
-  /* color:#0a1612;
-  color:#ecf0f1;
-  color:#F7CE3E;
-  color:#2ecc71, #3498db, #e74c3c, #f1c40f */
 }
 
 li a:active {
@@ -54,7 +42,11 @@ li a {
 .action-form {
   color: #343a40;
   text-align: left;
-  margin-left: 20px;
+  /* margin-left: 20px; */
+  margin: 10px;
+  margin-left: 40px;
+  margin-right: 40px;
+  padding: 5px;
 }
 
 .action-headline {
@@ -73,7 +65,10 @@ li a {
   text-align: center;
   white-space: nowrap;
   border-radius: 5px;
-  border: #343a40  solid 2px;
+  border: #343a40  solid 1px;
+  height:38px !important;
+  width:106px !important;
+  /* margin-top:5px;  */
 }
 
 .btn-yellow:hover {
@@ -114,6 +109,7 @@ nav-bar-fit {
 
 .credit {
   font-size: 60%;
+  color: #343a40;
 }
 
 .navbar-sm {
@@ -158,4 +154,39 @@ nav-bar-fit {
   background-color: #343a40;
   left: 0;
   z-index: 2;
+}
+
+.override-size-sm {
+  width:150px !important;
+  height: 38px !important;
+  margin-top:2px !important; 
+  margin-bottom:2px !important; 
+}
+
+.override-size-md {
+  width:171px !important;
+  height: 38px !important;
+  margin-top:2px !important; 
+  margin-bottom:2px !important; 
+}
+
+.override-size-lg {
+  width:223px !important;
+  height: 38px !important;
+  margin-top:2px !important; 
+  margin-bottom:2px !important; 
+}
+
+.override-form-row {
+  margin-bottom:5px !important; 
+  margin-top:5px !important; 
+}
+
+@media only screen and (max-width: 630px) {
+  .btn-yellow {
+    margin-left: 0;
+    margin-right: 5px !important; 
+    margin-top: 5px;
+    
+  }
 }
